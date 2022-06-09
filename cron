@@ -1,0 +1,2 @@
+20 * * * * php /srv/app/bin/console app:collect-hourly-data:send
+00 01 * * * php /srv/app/bin/console app:generate-daily-raport:send

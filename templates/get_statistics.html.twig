@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div style="padding: 10px">
+    <table style="border: 1px solid; border-collapse: collapse; text-align: center;margin-left:auto;margin-right:auto">
+        <tr style="border: 1px solid;">
+            <th style="border: 1px solid; padding: 5px;">GeneratorId</th>
+            <th style="border: 1px solid; padding: 5px;">Name</th>
+            <th style="border: 1px solid; padding: 5px;">Average Power [kW]</th>
+            <th style="border: 1px solid; padding: 5px;">Hour</th>
+            <th style="border: 1px solid; padding: 5px;">Date</th>
+        </tr>
+        {% for statistic in pager %}
+
+            <tr style="border: 1px solid;">
+                <td style="border: 1px solid; padding: 5px;">{{ statistic[0].getGeneratorId() }}</td>
+                <td style="border: 1px solid; padding: 5px;">{{ statistic.name }}</td>
+                <td style="border: 1px solid; padding: 5px;">{{ statistic[0].averagePower }}</td>
+                <td style="border: 1px solid; padding: 5px;">{{ statistic[0].hour }}</td>
+                <td style="border: 1px solid; padding: 5px;">{{ statistic[0].getDateAsString() }}</td>
+            </tr>
+        {% endfor %}
+        {% if pager %}
+            <div style="text-align: center; ">
+                <a href="{{ url('app_search') }}"><button>Search</button></a>
+            </div>
+            <div style="text-align: center; padding: 20px">
+                {{ pagerfanta(pager) }}
+            </div>
+        {% endif %}
+    </table>
+</div>
+
+
+</body>
+</html>
+

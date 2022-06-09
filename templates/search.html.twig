@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="text-align: center">
+    <div style="margin-top: 30px">
+    {{ form_start(searchForm) }}
+        <div>{{ form_widget(searchForm.generator) }}</div><br>
+        <div>From: {{ form_widget(searchForm.from) }}</div><br>
+        <div>To: {{ form_widget(searchForm.to) }}</div><br>
+        {{ form_widget(searchForm.submit) }}
+    {{ form_end(searchForm) }}
+    </div>
+</div>
+</body>
+</html>
+
