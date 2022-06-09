@@ -11,7 +11,7 @@ Elektrownia posiada 20 generatorów prądu oraz każdy poszczególny generator p
 - Redis 6.2.7
 
 ## Wybór bazy<br>
-MySql służy do przechowywania stałych danych, do których będziemy chcieli "sięgnąć" w przyszłości. Natomiast użyłem Redis' jako nierelacyjnej bazy danych, ponieważ danych których generujemy z pomiarów na bieżąco jest bardzo dużo. Przykładowo 1 milion hash'y z 5 polami zajmuje około 160MB. Wygenerowanych hash'y za cały rok będzie
+MySql służy do przechowywania stałych danych, do których będziemy chcieli "sięgnąć" w przyszłości. Natomiast użyłem Redis'a jako nierelacyjnej bazy danych, ponieważ danych których generujemy z pomiarów na bieżąco jest bardzo dużo. Przykładowo 1 milion hash'y z 5 polami zajmuje około 160MB. Wygenerowanych hash'y za cały rok będzie
 1 261 440 000 co zajmie 201 830,4MB około 201GB. Dodatkowo Redis posiada bardzo użyteczną funkcjonalność jaką jest TTL, dzięki czemu generowane dane automatycznie po pewnym czasie zostaną usunięte.
 
 ## Instalacja i działanie aplikacji:
