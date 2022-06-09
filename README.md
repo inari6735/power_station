@@ -1,5 +1,6 @@
 # Power Station
-Story<br>
+
+## Story
 Elektrownia posiada 20 generatorów prądu oraz każdy poszczególny generator potrafi wygenerować prąd o maksymalnej mocy 1kW. Aplikacja dokonuje dwóch pomiarów w ciągu jednej sekundy dla każdego poszczególnego generatora prądu. Dane te są zbierane co każdą godzinę i wyliczana jest średnia moc wygenerowanego prądu dla każdego generatora w kW, w ciągu całej godziny. Codziennie zapisywany jest raport z dnia poprzedniego odnośnie wygenerowanego prądu w ciągu każdej godziny dla każdego poszczególnego generatora w MW. Aplikacja posiada GUI pozwalające na wyświetlanie danych dla poszczególnego generatora w podanym okresie.
 
 ## Główne narzędzia:
@@ -94,3 +95,6 @@ php bin/console app:generate-daily-raport:send
 
 Co każdą godzinę tj. [15:20, 16:20, 17:20 ...] wywoływany jest Cron wykonujący komendę: <code>php bin/console app:collect-hourly-data:send</code>
 Codziennie o godzinie 01:00 wywoływany jest Cron wykonujący komendę: <code>php bin/console app:generate-daily-raport:send</code>
+
+## Uwagi
+Projekt najlepiej uruchomić na maszynie z procesorem o architekturze x86. Obraz Redis'a nie jest dobrze zoptymalizowany pod procesory o architekturze ARM. Redis po pewnym czasie zapisu danych na procesorach ARM potrafi "spaść z rowerka" i "wypluć" błędem o naruszeniu ochrony pamięci. Jest to spowodowane właśnie architekturą procesora. Przekonałem się o tym podczas robienia tego projektu. Później zmieniłem środowisko z procesorem x86 i nie wystąpiły żadne problemy.
