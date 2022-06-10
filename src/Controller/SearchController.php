@@ -52,8 +52,6 @@ class SearchController extends AbstractController
             $from,
             $to
         );
-//        print("<pre>".print_r($queryBuilder->getQuery()->getResult(),true)."</pre>");
-//        die();
 
         $pagerfanta = new Pagerfanta(
             new QueryAdapter($queryBuilder)
