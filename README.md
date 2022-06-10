@@ -93,7 +93,7 @@ php bin/console app:generate-daily-raport:send
 
 ### Cron
 
-Co każdą godzinę tj. [15:20, 16:20, 17:20 ...] wywoływany jest Cron wykonujący komendę: <code>php bin/console app:collect-hourly-data:send</code>
+Co każdą godzinę tj. [15:20, 16:20, 17:20 ...] wywoływany jest Cron wykonujący komendę: <code>php bin/console app:collect-hourly-data:send</code><br>
 Codziennie o godzinie 01:00 wywoływany jest Cron wykonujący komendę: <code>php bin/console app:generate-daily-raport:send</code>
 
 ## Uwagi
