@@ -93,8 +93,8 @@ php bin/console app:generate-daily-raport:send
 
 ### Cron
 
-Co każdą godzinę tj. [15:20, 16:20, 17:20 ...] wywoływany jest Cron wykonujący komendę: <code>php bin/console app:collect-hourly-data:send</code><br>
-Codziennie o godzinie 01:00 wywoływany jest Cron wykonujący komendę: <code>php bin/console app:generate-daily-raport:send</code>
+Co każdą godzinę tj. [15:20, 16:20, 17:20 ...] wywoływany jest Cron wykonujący komendę: <br><code>php bin/console app:collect-hourly-data:send</code><br>
+Codziennie o godzinie 01:00 wywoływany jest Cron wykonujący komendę: <br><code>php bin/console app:generate-daily-raport:send</code>
 
 ## Uwagi
 Projekt najlepiej uruchomić na maszynie z procesorem o architekturze x86. Obraz Redis'a nie jest dobrze zoptymalizowany pod procesory o architekturze ARM. Redis po pewnym czasie zapisu danych na procesorach ARM potrafi "spaść z rowerka" i "wypluć" błędem o naruszeniu ochrony pamięci. Jest to spowodowane właśnie architekturą procesora. Przekonałem się o tym podczas robienia tego projektu. Później zmieniłem środowisko z procesorem x86 i nie wystąpiły żadne problemy.
