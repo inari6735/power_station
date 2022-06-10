@@ -41,7 +41,7 @@ class GenerateDailyRaportSendCommand extends Command
         $io->progressStart();
 
         $date = date("Y-m-d", strtotime("-1 days"));
-        $statistics = $this->generatorStatsRepository->getDailyGeneratorsStatsInMW("2019-01-01");
+        $statistics = $this->generatorStatsRepository->getDailyGeneratorsStatsInMW($date);
         $html = $this->dailyGeneratorsStatisticsReportService->createDailyStatisticsTemplate($statistics);
 
         $title = 'report_'.$date.'.pdf';
